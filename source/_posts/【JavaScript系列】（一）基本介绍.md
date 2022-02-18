@@ -5,7 +5,7 @@ tags: JacaScript 编程语言
 categories: 计算机
 ---
 
-#【JavaScript 系列】（一）基本介绍
+# 【JavaScript 系列】（一）基本介绍
 
 ## 什么是 JavaScript
 

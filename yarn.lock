@@ -791,6 +791,11 @@
     "picocolors" "^1.0.0"
     "serve-static" "^1.14.1"
 
+"hexo-tag-plantuml@^1.0.0":
+  "integrity" "sha1-Yr0Y3mFPliDiKgxyhuuacI3tp8g="
+  "resolved" "https://registry.npmjs.org/hexo-tag-plantuml/-/hexo-tag-plantuml-1.0.0.tgz"
+  "version" "1.0.0"
+
 "hexo-theme-landscape@^0.0.3":
   "integrity" "sha512-b0Di+TUVs4ESrNX4ULEh9uQmADpO6kr10rIJ2OGZM8suNQNFKdxn+vJUjnLfKkCPJAfVmS7/S83KCNYe4tpoNw=="
   "resolved" "https://registry.npmjs.org/hexo-theme-landscape/-/hexo-theme-landscape-0.0.3.tgz"
@@ -1311,9 +1316,9 @@
   "version" "1.0.3"
 
 "prismjs@^1.17.1":
-  "integrity" "sha512-HUoH9C5Z3jKkl3UunCyiD5jwk0+Hz0fIgQ2nbwU2Oo/ceuTAQAg+pPVnfdt2TJWRVLcxKh9iuoYDUSc8clb5UQ=="
-  "resolved" "https://registry.npmjs.org/prismjs/-/prismjs-1.26.0.tgz"
-  "version" "1.26.0"
+  "integrity" "sha512-t13BGPUlFDR7wRB5kQDG4jjl7XeuH6jbJGt11JHPL96qwsEHNX2+68tFXqc1/k+/jALsbSWJKUOT/hcYAZ5LkA=="
+  "resolved" "https://registry.npmjs.org/prismjs/-/prismjs-1.27.0.tgz"
+  "version" "1.27.0"
 
 "psl@^1.1.33":
   "integrity" "sha512-RIdOzyoavK+hA18OGGWDqUTsCLhtA7IcZ/6NCs4fFJaHBDab+pDDmDIByWFRQJq2Cd7r1OoQxBGKOaztq+hjIQ=="

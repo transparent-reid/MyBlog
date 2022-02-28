@@ -12,12 +12,10 @@ categories: 计算机
 
 ## 简单示例
 
-```plantuml
-@startuml
+{% plantuml %}
 Alice -> Bob: Hi，Bob!
 Alice <-- Bob: Hi,Alice!
-@enduml
-```
+{% endplantuml %}
 
 ```plantumlcode
 @startuml
@@ -44,8 +42,7 @@ Alice <-- Bob: Hi,Alice!
 
 它们在图上会呈现出的样子：
 
-```plantuml
-@startuml
+{% plantuml %}
 participant Participant as Foo
 actor Actor as Foo1
 boundary Boundary as Foo2
@@ -61,9 +58,7 @@ Foo -> Foo4: To entity
 Foo -> Foo5: To database
 Foo -> Foo6: To collections
 Foo -> Foo7: To queue
-@enduml
-
-```
+{% endplantuml %}
 
 ```plantumlcode
 @startuml
@@ -87,14 +82,12 @@ Foo -> Foo7: To queue
 
 关键字`as`用于重命名参与者，相当于给这些参与者起了一个“小名”，后面可以用这个“小名”来表示该参与者。
 
-可以使用 RGB 或者颜色名修改参与者的北京颜色。
+可以使用 RGB 或者颜色名修改参与者的背景颜色。
 比如：
 
-```plantuml
-@startuml
+{% plantuml %}
 actor Bob #red
-@enduml
-```
+{% endplantuml %}
 
 ```plantumlcode
 @startuml
@@ -104,14 +97,11 @@ actor Bob #red
 
 可以用`order`关键字自定义顺序来打印参与者。
 
-```plantuml
-@startuml
+{% plantuml %}
 participant 最后 order 30
 participant 中间 order 20
-participant 首个
-order 10
-@enduml
-```
+participant 首个 order 10
+{% endplantuml %}
 
 ```plantumlcode
 @startuml
@@ -125,12 +115,10 @@ participant 首个 order 10
 
 可以使用引号定义参与者，还可以用关键字 as 给参与者定义别名。
 
-```plantuml
-@startuml
+{% plantuml %}
 Alice -> "Bob()": Hello
-"Bob()" ->  "This is a very \n long sentence.": OK
-@enduml
-```
+"Bob()" -> "This is a very \n long sentence.": OK
+{% endplantuml %}
 
 ```plantumlcode
 @startuml
@@ -150,12 +138,10 @@ Alice -> "Bob()": Hello
 
 如果把`Alice -> "Bob()"`改为`Alice -> "Bob()" as Bob`则会变成下面这样：
 
-```plantuml
-@startuml
+{% plantuml %}
 Alice -> "Bob()" as Bob: Hello
-"Bob()" ->  "This is a very \n long sentence.": OK
-@enduml
-```
+"Bob()" -> "This is a very \n long sentence.": OK
+{% endplantuml %}
 
 如果将其改为`Bob as "Bob()"`也会变成这样。貌似 Bob 和“Bob()”不是同一个参与者一样。
 我的猜想是，可能带引号的定义无法作为参数传递，用常规的变量定义方法才能正常传递。由此可知，带引号的定义应该算是一种临时的定义方法，一个参与者只能使用一次。
@@ -176,8 +162,7 @@ Alice -> Alice: Something...
 修改箭头样式的方式有以下几种：
 具体在实例中对比参照吧。
 
-```plantuml
-@startuml
+{% plantuml %}
 Bob ->x Alice
 Bob -> Alice
 Bob ->> Alice
@@ -190,8 +175,7 @@ Bob o\\-- Alice
 
 Bob <-> Alice
 Bob <->o Alice
-@enduml
-```
+{% endplantuml %}
 
 ```plantumlcode
 @startuml
@@ -216,13 +200,11 @@ Bob <->o Alice
 
 和修改参与者的背景颜色相似。
 
-```plantuml
-@startuml
+{% plantuml %}
 Bob -[#red]> Alice
 Alice --[#0000FF]>Bob
 Alice -[#0000FF]->Bob
-@enduml
-```
+{% endplantuml %}
 
 ```plantumlcode
 @startuml
@@ -239,8 +221,7 @@ Alice -[#0000FF]->Bob
 使用`header`关键词增加页眉
 使用`footer`关键词增加页脚
 
-```plantuml
-@startuml
+{% plantuml %}
 header Page Header
 footer Page %page% of %lastpage%
 
@@ -248,8 +229,7 @@ title Example Title
 
 Alice -> Bob
 
-@enduml
-```
+{% endplantuml %}
 
 ```plantumlcode
 @startuml

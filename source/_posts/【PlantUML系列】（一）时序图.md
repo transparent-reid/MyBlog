@@ -248,4 +248,205 @@ Alice -> Bob
 关键字`newpage`用于把一张图分割成多张。
 暂时没啥用，需要的自己去查吧。
 
-先写这么多吧。。。
+## 组合消息
+
+我们可以通过以下关键词来组合消息：
+
+- alt/else
+- opt
+- loop
+- par
+- break
+- critical
+- group,后面紧跟着消息内容
+
+可以在标头(header)添加需要显示的文字。
+关键字`end`结束分组。
+分组也可以嵌套使用。
+
+{% plantuml %}
+Alice -> Bob: 认证请求
+
+alt 成功情况
+Bob -> Alice: 认证接收
+else 某种失败情况
+Bob -> Alice: 认证失败
+group 我自己的标签
+Alice -> Log: 开始记录攻击日志
+loop 1000 次
+Alice -> Bob: DNS 攻击
+end
+Alice -> Log: 结束记录攻击日志
+end
+else 另一种失败
+Bob -> Alice: 请重复
+end
+{% endplantuml %}
+
+```plantumlcode
+@startuml
+Alice -> Bob: 认证请求
+
+alt 成功情况
+    Bob -> Alice: 认证接收
+else 某种失败情况
+    Bob -> Alice: 认证失败
+    group 我自己的标签
+    Alice -> Log: 开始记录攻击日志
+        loop 1000次
+            Alice -> Bob: DNS攻击
+        end
+    Alice -> Log: 结束记录攻击日志
+    end
+else 另一种失败
+    Bob -> Alice: 请重复
+end
+@enduml
+```
+
+## 给消息添加注释
+
+我们可以通过在消息后面添加`note left`或者`note right`关键字来给消息添加注释。
+你也可以通过使用`end note`来添加多行注释。
+{% plantuml %}
+Alice -> Bob: hello
+note left: this is a first note
+
+Bob -> Alice: ok
+note right: this is another note
+
+Bob -> Bob: I am thinking
+note left
+a note
+can also be defined
+on several lines
+end note
+{% endplantuml %}
+
+```plantumlcode
+@startuml
+Alice -> Bob: hello
+note left: this is a first note
+
+Bob -> Alice: ok
+note right: this is another note
+
+Bob -> Bob: I am thinking
+note left
+a note
+can also be defined
+on several lines
+end note
+@enduml
+```
+
+也可以使用`note left of`，`note right of`，或`note over`在节点的相对位置放置注释。
+当然也可以改变颜色啦~
+{% plantuml %}
+participant Alice
+participant Bob
+note left of Alice #aqua
+This is displayed
+left of Alice
+end note
+
+note right of Alice: This is displayed right of Alice.
+
+note over Alice: This is displayed over Alice.
+{% endplantuml %}
+
+```plantumlcode
+@startuml
+participant Alice
+participant Bob
+note left of Alice #aqua
+This is displayed
+left of Alice
+end note
+
+note right of Alice: This is displayed right of Alice.
+
+note over Alice: This is displayed over Alice.
+@enduml
+```
+
+## 改变备注框的形状【hnote 和 rnote】
+
+使用`hnote`和`rnote`两个关键字修改备注框的形状：
+
+- `hnote`代表六边形
+- `rnote`代表正方形
+
+## 在多个参与者添加备注【across】
+
+可以直接在所有参与者之间添加备注，格式是：
+
+- `note across`: 备注描述
+
+## 在同一级对齐多个备注【/】
+
+使用/可以在同一级对齐多个备注。
+没有/备注不是对其的，像之前的例子中一样。
+使用/可以对齐。
+{% plantuml %}
+note over Alice: Alice
+/ note over Bob: Bob
+Bob -> Alice: hello
+{% endplantuml %}
+
+```plantumlcode
+@startuml
+note over Alice: Alice
+/ note over Bob: Bob
+Bob -> Alice: hello
+@enduml
+```
+
+## 分隔符
+
+可以通过使用`==`关键字将图表分割为多个逻辑步骤。
+{% plantuml %}
+== 初始化 ==
+Alice -> Bob: 认证请求
+Bob -> Alice: 认证响应
+
+== 重复 ==
+Alice -> Bob: 认证请求
+Alice <- Bob: 认证响应
+
+{% endplantuml %}
+
+```plantumlcode
+@startuml
+== 初始化 ==
+Alice -> Bob: 认证请求
+Bob -> Alice: 认证响应
+
+== 重复 ==
+Alice -> Bob: 认证请求
+Alice <- Bob: 认证响应
+@enduml
+```
+
+## 延迟
+
+你可以使用`...`来表示延迟，并且还可以给延迟添加注释。
+{% plantuml %}
+Alice -> Bob: 认证请求
+...
+Bob --> Alice: 认证响应
+...5 分钟后...
+Bob -> Alice: 再见
+{% endplantuml %}
+
+```plantumlcode
+@startuml
+Alice -> Bob: 认证请求
+...
+Bob --> Alice: 认证响应
+...5分钟后...
+Bob -> Alice: 再见
+@enduml
+```
+
+以上基本可以绘制出大部分图表了，想要进阶的 uu 们可以去[官网](https://plantuml.com/zh/)进一步查找用户手册。

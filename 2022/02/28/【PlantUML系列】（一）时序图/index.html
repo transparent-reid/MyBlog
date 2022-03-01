@@ -463,21 +463,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-02-28
+                    2022-03-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    904
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    6 分
                 </div>
                 
 
@@ -564,7 +564,56 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@startuml</span><br><span class="line">header Page Header</span><br><span class="line">footer Page %page% of %lastpage%</span><br><span class="line"></span><br><span class="line">title Example Title</span><br><span class="line"></span><br><span class="line">Alice -&gt; Bob</span><br><span class="line"></span><br><span class="line">@enduml</span><br></pre></td></tr></table></figure>
 
 <h2 id="分割示意图"><a href="#分割示意图" class="headerlink" title="分割示意图"></a>分割示意图</h2><p>关键字<code>newpage</code>用于把一张图分割成多张。<br>暂时没啥用，需要的自己去查吧。</p>
-<p>先写这么多吧。。。</p>
+<h2 id="组合消息"><a href="#组合消息" class="headerlink" title="组合消息"></a>组合消息</h2><p>我们可以通过以下关键词来组合消息：</p>
+<ul>
+<li>alt&#x2F;else</li>
+<li>opt</li>
+<li>loop</li>
+<li>par</li>
+<li>break</li>
+<li>critical</li>
+<li>group,后面紧跟着消息内容</li>
+</ul>
+<p>可以在标头(header)添加需要显示的文字。<br>关键字<code>end</code>结束分组。<br>分组也可以嵌套使用。</p>
+<img  src=http://www.plantuml.com/plantuml/svg/Syp9J4vLqBLJSCfFib9uiMx9Y_MDBzPlVxQnYOihCQT4uLd7XATTyvyrjpvjsye5L0DIwWZI0rFyh6_fiodRk59pYbCLdisVy7nvxzCb6rziMOf72qG1LtfHVca1q8A9BzfNFTs-yVcibcSBsf-ltSVb27EJJtwwbSBJFGrFbtU_MBVXwTwfpwRiVjg--zdqfK_tJ-VAoSylK30qC31GUBPc8K8Js2CkVi4A4CLSgNafQ2O-tptvsTpvM4m4AGLxv6d_iYSx6k1-GVV5-kqlsu5IlI0D0000>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@startuml</span><br><span class="line">Alice -&gt; Bob: 认证请求</span><br><span class="line"></span><br><span class="line">alt 成功情况</span><br><span class="line">    Bob -&gt; Alice: 认证接收</span><br><span class="line">else 某种失败情况</span><br><span class="line">    Bob -&gt; Alice: 认证失败</span><br><span class="line">    group 我自己的标签</span><br><span class="line">    Alice -&gt; Log: 开始记录攻击日志</span><br><span class="line">        loop 1000次</span><br><span class="line">            Alice -&gt; Bob: DNS攻击</span><br><span class="line">        end</span><br><span class="line">    Alice -&gt; Log: 结束记录攻击日志</span><br><span class="line">    end</span><br><span class="line">else 另一种失败</span><br><span class="line">    Bob -&gt; Alice: 请重复</span><br><span class="line">end</span><br><span class="line">@enduml</span><br></pre></td></tr></table></figure>
+
+<h2 id="给消息添加注释"><a href="#给消息添加注释" class="headerlink" title="给消息添加注释"></a>给消息添加注释</h2><p>我们可以通过在消息后面添加<code>note left</code>或者<code>note right</code>关键字来给消息添加注释。<br>你也可以通过使用<code>end note</code>来添加多行注释。</p>
+<img  src=http://www.plantuml.com/plantuml/svg/LOsn3SCm30HxJl4BP04L0PmkOz0MPH5cA40ICdyakqW2VFL_XrzCDy7jZaTP0xAO5VBI1IQf1_Ii3IECfBLrp8bei5DPfXjGZikekkTVPPHPwhzolZp1hudveRv_tuWlTcC7MojO1L6IkaGgZYPlgMomKJGIZoVz0G00>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@startuml</span><br><span class="line">Alice -&gt; Bob: hello</span><br><span class="line">note left: this is a first note</span><br><span class="line"></span><br><span class="line">Bob -&gt; Alice: ok</span><br><span class="line">note right: this is another note</span><br><span class="line"></span><br><span class="line">Bob -&gt; Bob: I am thinking</span><br><span class="line">note left</span><br><span class="line">a note</span><br><span class="line">can also be defined</span><br><span class="line">on several lines</span><br><span class="line">end note</span><br><span class="line">@enduml</span><br></pre></td></tr></table></figure>
+
+<p>也可以使用<code>note left of</code>，<code>note right of</code>，或<code>note over</code>在节点的相对位置放置注释。<br>当然也可以改变颜色啦~</p>
+<img  src=http://www.plantuml.com/plantuml/svg/AqWiAibCpYn8p2jHSCp9J4xbAa0ISSfFuihBBqbLo4bDAr78JuCeKL1EB2nDv0h9o2nM0AAKpEA2dCJAr1Gk55LSgNaf2Y3DN10ZYZBJCn2oLWeOsj5Kw47rvPUb5k7MWv3L0m00>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@startuml</span><br><span class="line">participant Alice</span><br><span class="line">participant Bob</span><br><span class="line">note left of Alice #aqua</span><br><span class="line">This is displayed</span><br><span class="line">left of Alice</span><br><span class="line">end note</span><br><span class="line"></span><br><span class="line">note right of Alice: This is displayed right of Alice.</span><br><span class="line"></span><br><span class="line">note over Alice: This is displayed over Alice.</span><br><span class="line">@enduml</span><br></pre></td></tr></table></figure>
+
+<h2 id="改变备注框的形状【hnote-和-rnote】"><a href="#改变备注框的形状【hnote-和-rnote】" class="headerlink" title="改变备注框的形状【hnote 和 rnote】"></a>改变备注框的形状【hnote 和 rnote】</h2><p>使用<code>hnote</code>和<code>rnote</code>两个关键字修改备注框的形状：</p>
+<ul>
+<li><code>hnote</code>代表六边形</li>
+<li><code>rnote</code>代表正方形</li>
+</ul>
+<h2 id="在多个参与者添加备注【across】"><a href="#在多个参与者添加备注【across】" class="headerlink" title="在多个参与者添加备注【across】"></a>在多个参与者添加备注【across】</h2><p>可以直接在所有参与者之间添加备注，格式是：</p>
+<ul>
+<li><code>note across</code>: 备注描述</li>
+</ul>
+<h2 id="在同一级对齐多个备注【-x2F-】"><a href="#在同一级对齐多个备注【-x2F-】" class="headerlink" title="在同一级对齐多个备注【&#x2F;】"></a>在同一级对齐多个备注【&#x2F;】</h2><p>使用&#x2F;可以在同一级对齐多个备注。<br>没有&#x2F;备注不是对其的，像之前的例子中一样。<br>使用&#x2F;可以对齐。</p>
+<img  src=http://www.plantuml.com/plantuml/svg/oyilILN8BqijKd3CoKnEjO9GNFeAUN09f_maAn311SGAkdOmXHcfEJdv0000>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@startuml</span><br><span class="line">note over Alice: Alice</span><br><span class="line">/ note over Bob: Bob</span><br><span class="line">Bob -&gt; Alice: hello</span><br><span class="line">@enduml</span><br></pre></td></tr></table></figure>
+
+<h2 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h2><p>可以通过使用<code>==</code>关键字将图表分割为多个逻辑步骤。</p>
+<img  src=http://www.plantuml.com/plantuml/svg/ixLLUDenz-doxgSzqnHiRRaSSpAJKnLqxHISyfEi55wiM_9YVUEBzTkVRMpY0eg09C0gO59F9_S-tJM5YylMLk5bU-_J9Rq4p818sUWYIq7D0000>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@startuml</span><br><span class="line">== 初始化 ==</span><br><span class="line">Alice -&gt; Bob: 认证请求</span><br><span class="line">Bob -&gt; Alice: 认证响应</span><br><span class="line"></span><br><span class="line">== 重复 ==</span><br><span class="line">Alice -&gt; Bob: 认证请求</span><br><span class="line">Alice &lt;- Bob: 认证响应</span><br><span class="line">@enduml</span><br></pre></td></tr></table></figure>
+
+<h2 id="延迟"><a href="#延迟" class="headerlink" title="延迟"></a>延迟</h2><p>你可以使用<code>...</code>来表示延迟，并且还可以给延迟添加注释。</p>
+<img  src=http://www.plantuml.com/plantuml/svg/Syp9J4vLqBLJSCfFib9uiMx9Y_MDBzPlVxQnYKjFJuyBAAgW2vHr12c3oJ-TtFjqrnIGlAd2quwsbvFcFvtG1rSDL_oqhVV5yaO0>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@startuml</span><br><span class="line">Alice -&gt; Bob: 认证请求</span><br><span class="line">...</span><br><span class="line">Bob --&gt; Alice: 认证响应</span><br><span class="line">...5分钟后...</span><br><span class="line">Bob -&gt; Alice: 再见</span><br><span class="line">@enduml</span><br></pre></td></tr></table></figure>
+
+<p>以上基本可以绘制出大部分图表了，想要进阶的 uu 们可以去<a target="_blank" rel="noopener" href="https://plantuml.com/zh/">官网</a>进一步查找用户手册。</p>
 
                 
             </div>

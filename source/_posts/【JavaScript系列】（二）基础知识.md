@@ -222,7 +222,7 @@ typeof alert; // "function"  (3)
 ### alert
 
 显示一条信息，并等待用户按下 OK。
-![1](/source/_posts/【JavaScript系列】（二）基础知识/1.png)
+{% asset_img 1.png %}
 
 ### prompt
 
@@ -237,7 +237,7 @@ typeof alert; // "function"  (3)
 let age = prompt("How old are you?", 100);
 ```
 
-![2](/source/_posts/【JavaScript系列】（二）基础知识/2.png)
+{% asset_img 2.png %}
 
 ### confirm
 
@@ -250,7 +250,7 @@ result = confirm(question);
 `confirm`函数显示一个带有`question`以及确定和取消两个按钮的模态窗口。
 点击确定返回`true`，点击取消返回`false`。
 
-![3](/source/_posts/【JavaScript系列】（二）基础知识/3.png)
+{% asset_img 3.png %}
 
 ## 类型转换
 
@@ -264,7 +264,7 @@ result = confirm(question);
 我们也可以使用`Number(value)`显式地将这个`value`转换为 number 类型。
 当然如果字符串不是一个有效数字，转换的结果会是`NaN`。
 number 类型转换规则：
-![4](/source/_posts/【JavaScript系列】（二）基础知识/4.png)
+{% asset_img 4.png %}
 
 ### 布尔类型转换
 

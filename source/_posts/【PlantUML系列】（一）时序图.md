@@ -211,6 +211,7 @@ Alice -[#0000FF]->Bob
 Bob -[#red]> Alice
 Alice --[#0000FF]>Bob
 Alice -[#0000FF]->Bob
+@enduml
 ```
 
 注意第二条和第三条的区别，这两个都可以。

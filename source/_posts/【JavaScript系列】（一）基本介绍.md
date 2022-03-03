@@ -1,7 +1,10 @@
 ---
 title: 【JavaScript系列】（一）基本介绍
 date: 2022-02-18 16:07:58
-tags: JacaScript 编程语言
+tags:
+  - JacaScript
+  - 编程语言
+  - 前端
 categories: 计算机
 ---
 
